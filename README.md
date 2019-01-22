@@ -39,8 +39,9 @@ module.exports = {
   ],
 }
 
-// algolia-index-config.js must return a Promise
+// algolia-index-config.js
 // (graphql: GraphQlClient) => Promise<[]<{indexName: string, indexData: []<any>}>>
+
 module.exports = async (/*graphql*/) => [
   { indexName: 'index1', indexData: [{ hello: '1' }] },
   { indexName: 'index2', indexData: [{ hello: '2' }] },
