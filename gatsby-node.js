@@ -1,5 +1,8 @@
 const algoliasearch = require('algoliasearch')
 const report = require('gatsby-cli/lib/reporter')
+const path = require('path')
+
+const DEFAULT_CONFIG_NAME = `algolia-index-config`
 
 const chunk = (arr, chunkSize, cache = []) => {
   const tmp = [...arr]
@@ -8,14 +11,19 @@ const chunk = (arr, chunkSize, cache = []) => {
 }
 
 exports.onPostBuild = async (
-  { graphql },
-  { appId, apiKey, indexConfig, chunkSize = 1000 }
+  { graphql, store },
+  { appId, apiKey, path: configPath, chunkSize = 1000 }
 ) => {
   const activity = report.activityTimer(`Start indexing website to Algolia`)
   activity.start()
   const client = algoliasearch(appId, apiKey)
+  const { program } = store.getState()
 
-  const indexes = await indexConfig(graphql)
+  const indexingFunction = require(path.join(
+    program.directory,
+    configPath ? configPath : DEFAULT_CONFIG_NAME
+  ))
+  const indexes = await indexingFunction(graphql)
 
   setStatus(activity, `${indexes.length} data sets to index`)
   const indexJobs = indexes.map(

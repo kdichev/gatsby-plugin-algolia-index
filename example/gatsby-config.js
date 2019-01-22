@@ -37,7 +37,6 @@ module.exports = {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ACCESS_TOKEN,
         chunkSize: 10000, // default: 1000
-        indexConfig: require('./algolia-index-config'),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
