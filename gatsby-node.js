@@ -62,7 +62,7 @@ exports.onPostBuild = async (
   activity.end()
 }
 
-async function scopedCopyIndex(client, sourceIndex, targetIndex) {
+const scopedCopyIndex = async (client, sourceIndex, targetIndex) => {
   const { taskID } = await client.copyIndex(
     sourceIndex.indexName,
     targetIndex.indexName,
@@ -71,7 +71,7 @@ async function scopedCopyIndex(client, sourceIndex, targetIndex) {
   return targetIndex.waitTask(taskID)
 }
 
-async function moveIndex(client, sourceIndex, targetIndex) {
+const moveIndex = async (client, sourceIndex, targetIndex) => {
   const { taskID } = await client.moveIndex(
     sourceIndex.indexName,
     targetIndex.indexName
@@ -79,7 +79,7 @@ async function moveIndex(client, sourceIndex, targetIndex) {
   return targetIndex.waitTask(taskID)
 }
 
-async function indexExists(index) {
+const indexExists = async index => {
   try {
     const { nbHits } = await index.search()
     return nbHits > 0
@@ -88,7 +88,7 @@ async function indexExists(index) {
   }
 }
 
-function setStatus(activity, status) {
+const setStatus = async (activity, status) => {
   if (activity && activity.setStatus) {
     activity.setStatus(status)
   } else {
