@@ -1,17 +1,17 @@
-# Gatsby plugin Algolia
+# Gatsby plugin Algolia index
 
 > 🚧 This plugin is work in progress 🚧
 >
 > Feel free to open issues for any questions or ideas
 
 ```sh
-$ yarn add gatsby-plugin-algolia
+$ yarn add gatsby-plugin-algolia-index
 ```
 
 First add credentials to a .env file, which you won't commit. If you track this in your file, and especially if the site is open source, you will leak your admin API key. This would mean anyone is able to change anything on your Algolia index.
 
 ```env
-// .env.production
+// .env.${process.env.NODE_ENV}
 ALGOLIA_APP_ID=XXX
 ALGOLIA_API_KEY=XXX
 ```
@@ -22,7 +22,6 @@ require('dotenv').config({
 })
 
 // gatsby-config.js
-
 module.exports = {
   plugins: [
     {
