@@ -1,5 +1,4 @@
 const algoliasearch = require('algoliasearch')
-// const chunk = require('lodash.chunk')
 const report = require('gatsby-cli/lib/reporter')
 
 const chunk = (arr, chunkSize, cache = []) => {
