@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-plugin-algolia-index",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "konstantin.dichev@gmail.com",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "algolia",
+    "gatsby-plugin"
+  ],
+  "dependencies": {
+    "algoliasearch": "^3.32.0",
+    "gatsby-cli": "^2.4.8",
+    "lodash.chunk": "^4.2.0"
+  }
+}
