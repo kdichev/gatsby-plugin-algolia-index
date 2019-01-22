@@ -1,5 +1,7 @@
 # Gatsby plugin Algolia index
 
+[![Build Status](https://travis-ci.org/kdichev/gatsby-plugin-algolia-index.svg?branch=master)](https://travis-ci.org/kdichev/gatsby-plugin-algolia-index)
+
 > 🚧 This plugin is work in progress 🚧
 >
 > Feel free to open issues for any questions or ideas
