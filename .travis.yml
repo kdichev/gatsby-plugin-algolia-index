@@ -6,4 +6,3 @@ cache:
     - node_modules
 deploy:
   provider: npm
-  on: master
