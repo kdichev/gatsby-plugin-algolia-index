@@ -10,13 +10,13 @@ const chunk = (arr, chunkSize, cache = []) => {
 
 exports.onPostBuild = async (
   { graphql },
-  { appId, apiKey, createIndexes, chunkSize = 1000 }
+  { appId, apiKey, indexConfig, chunkSize = 1000 }
 ) => {
   const activity = report.activityTimer(`Start indexing website to Algolia`)
   activity.start()
   const client = algoliasearch(appId, apiKey)
 
-  const indexes = await createIndexes(graphql)
+  const indexes = await indexConfig(graphql)
 
   setStatus(activity, `${indexes.length} data sets to index`)
   const indexJobs = indexes.map(
