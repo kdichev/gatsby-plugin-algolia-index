@@ -32,6 +32,7 @@ module.exports = {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_API_KEY,
         indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        path: 'path/to/custom/indexing-config' // optional
         chunkSize: 10000, // default: 1000
       },
     },
