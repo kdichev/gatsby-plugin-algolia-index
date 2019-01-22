@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-algolia-index",
-  "version": "1.0.2",
+  "version": "0.0.0-development",
   "main": "index.js",
   "author": "konstantin.dichev@gmail.com",
   "license": "MIT",
@@ -18,6 +18,10 @@
     "url": "https://github.com/kdichev/gatsby-plugin-algolia-index.git"
   },
   "scripts": {
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "semantic-release": "^15.13.3"
   }
 }
