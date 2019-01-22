@@ -36,7 +36,7 @@ module.exports = {
       options: {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ACCESS_TOKEN,
-        chunkSize: 10000, // default: 1000
+        chunkSize: 10000,
       },
     },
   ],
