@@ -1,6 +1,7 @@
 const algoliasearch = require('algoliasearch')
 const report = require('gatsby-cli/lib/reporter')
 const path = require('path')
+let fs = require('fs')
 
 const DEFAULT_CONFIG_NAME = `algolia-index-config`
 
@@ -19,11 +20,13 @@ exports.onPostBuild = async (
   const client = algoliasearch(appId, apiKey)
   const { program } = store.getState()
 
-  const indexingFunction = require(path.join(
+  const pathToConfigModule = path.join(
     program.directory,
     configPath ? configPath : DEFAULT_CONFIG_NAME
-  ))
-  const indexes = await indexingFunction(graphql)
+  )
+  const requiredConfigModule = require(pathToConfigModule)
+
+  const indexes = await requiredConfigModule(graphql)
 
   setStatus(activity, `${indexes.length} data sets to index`)
   const indexJobs = indexes.map(
