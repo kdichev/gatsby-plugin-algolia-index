@@ -1,6 +1,6 @@
 # Gatsby plugin Algolia index
 
-[![Build Status](https://travis-ci.org/kdichev/gatsby-plugin-algolia-index.svg?branch=master)](https://travis-ci.org/kdichev/gatsby-plugin-algolia-index)
+[![Build Status](https://travis-ci.org/kdichev/gatsby-plugin-algolia-index.svg?branch=master)](https://travis-ci.org/kdichev/gatsby-plugin-algolia-index) [![Greenkeeper badge](https://badges.greenkeeper.io/kdichev/gatsby-plugin-algolia-index.svg)](https://greenkeeper.io/)
 
 > 🚧 This plugin is work in progress 🚧
 >
